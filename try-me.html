@@ -1,0 +1,1668 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script type="text/javascript">
+    window.require = () => React;
+  </script>
+  <style type="text/css">
+    body {
+      background-color: #f0f1f2;
+    }
+  </style>
+  <script type="text/javascript" src="dist/itinerary.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/javascript">
+    const render = (component, options) => {
+      const newRoot = document.createElement("div");
+      document.body.append(newRoot);
+      ReactDOM.createRoot(newRoot).render(
+        React.createElement(component, {
+          ...options,
+        })
+      );
+      document.body.append(document.createElement('hr'));
+    };
+
+    render(Itinerary, {});
+    render(Card, {});
+
+    render(Card, {
+      productType: 'FLIGHT',
+      segments: [{
+        origin: {
+          cityName: 'Paris', code: 'CDG'
+        },
+        destination: {
+          cityName: 'Tokyo', code: 'NRT'
+        },
+        start: {
+          date: { day: 28, month: 3, year: 2020 }, time: { hour: 8, minutes: 15 },
+          timezone: '+01:00'
+        },
+        end: {
+          date: { day: 29, month: 3, year: 2020 }, time: { hour: 1, minutes: 15 },
+          timezone: '+09:00'
+        }
+      }],
+      specificity: [{ icon: 'cancel', text: 'Non refundable' }]
+    })
+
+    render(Card, {
+      productType: 'FLIGHT',
+      openAfterLoad: true,
+      tripType: 'ONE_WAY',
+      segments: [{
+        origin: {
+          name: 'Roissy-Charles de Gaulle',
+          cityName: 'Paris', code: 'CDG',
+          coordinates: { latitude: 2.55, longitude: 49.012798 }
+        },
+        destination: {
+          name: 'Schipol',
+          cityName: 'Amsterdam', code: 'AMS',
+          coordinates: { latitude: 4.76389, longitude: 52.308601 }
+        },
+        start: {
+          date: { day: 28, month: 3, year: 2020 }, time: { hour: 8, minutes: 15 },
+          timezone: '+01:00'
+        },
+        end: {
+          date: { day: 28, month: 3, year: 2020 }, time: { hour: 9, minutes: 40 },
+          timezone: '+01:00'
+        },
+        supplier: {
+          name: 'KLM',
+          code: 'kl',
+          vendorTransitNumber: 2008,
+          operatingCompany: 'Air France',
+          cabinClass: 'Economy',
+          classCode: 'ECONOMY',
+          vehicle: 'Airbus A320',
+          amenities: [
+            { icon: 'wifi', text: 'Free Wifi' },
+            { icon: 'electrical_services', text: 'USB plugs and 220V European compliant plugs' },
+            { icon: 'tablet', text: 'Videos and games on board' },
+            { icon: 'dining', text: 'Fresh meals and continental cuisine' }
+          ]
+        }
+      },
+      {
+        destination: {
+          name: 'Schipol',
+          cityName: 'Amsterdam', code: 'AMS',
+          coordinates: { latitude: 2.55, longitude: 49.012798 }
+        },
+        start: {
+          date: { day: 28, month: 3, year: 2020 }, time: { hour: 9, minutes: 40 },
+          timezone: '+01:00'
+        },
+        end: {
+          date: { day: 28, month: 3, year: 2020 }, time: { hour: 11, minutes: 0 },
+          timezone: '+01:00'
+        }
+      }, {
+        origin: {
+          name: 'Schipol',
+          cityName: 'Amsterdam', code: 'AMS',
+          coordinates: { latitude: 2.55, longitude: 49.012798 }
+        },
+        destination: {
+          name: 'Taiwan-Taoyuan Airport',
+          cityName: 'Taipei', code: 'TPE',
+          coordinates: { latitude: 121.233002, longitude: 25.0777 }
+        },
+        supplier: {
+          name: 'China Airlines',
+          code: 'mu',
+          vendorTransitNumber: 9292,
+          operatingCompany: 'Air France',
+          cabinClass: 'Economy',
+          classCode: 'ECONOMY',
+          vehicle: 'Airbus A350-900',
+          amenities: [
+            { icon: 'wifi', text: 'Free Wifi' },
+            { icon: 'electrical_services', text: 'USB plugs and 220V European compliant plugs' },
+            { icon: 'tablet', text: 'Videos and games on board' },
+            { icon: 'dining', text: 'Fresh meals and continental cuisine' }
+          ]
+        },
+        start: {
+          date: { day: 28, month: 3, year: 2020 }, time: { hour: 11, minutes: 0 },
+          timezone: '+01:00'
+        },
+        end: {
+          date: { day: 29, month: 3, year: 2020 }, time: { hour: 6, minutes: 35 },
+          timezone: '+08:00'
+        }
+      }, {
+        destination: {
+          name: 'Taiwan-Taoyuan Airport',
+          cityName: 'Taipei', code: 'TPE',
+          coordinates: { latitude: 121.233002, longitude: 25.0777 }
+        },
+        start: {
+          date: { day: 29, month: 3, year: 2020 }, time: { hour: 6, minutes: 35 },
+          timezone: '+08:00'
+        },
+        end: {
+          date: { day: 29, month: 3, year: 2020 }, time: { hour: 8, minutes: 50 },
+          timezone: '+08:00'
+        }
+      }, {
+        origin: {
+          name: 'Taiwan-Taoyuan Airport',
+          cityName: 'Taipei', code: 'TPE',
+          coordinates: { latitude: 121.233002, longitude: 25.0777 }
+        },
+        destination: {
+          name: 'Narita Airport',
+          cityName: 'Tokyo', code: 'NRT',
+          coordinates: { latitude: 140.386001587, longitude: 35.7647018433 }
+        },
+        supplier: {
+          name: 'China Airlines',
+          code: 'mu',
+          vendorTransitNumber: 100,
+          cabinClass: 'Economy',
+          classCode: 'ECONOMY',
+          vehicle: 'Airbus A350-900',
+          amenities: [
+            { icon: 'wifi', text: 'Free Wifi' },
+            { icon: 'electrical_services', text: 'USB plugs and 220V European compliant plugs' },
+            { icon: 'tablet', text: 'Videos and games on board' },
+            { icon: 'dining', text: 'Fresh meals and continental cuisine' }
+          ]
+        },
+        start: {
+          date: { day: 29, month: 3, year: 2020 }, time: { hour: 8, minutes: 50 },
+          timezone: '+08:00'
+        },
+        end: {
+          date: { day: 29, month: 3, year: 2020 }, time: { hour: 13, minutes: 15 },
+          timezone: '+09:00'
+        }
+      }],
+      specificity: [{ icon: 'cancel', text: 'Non refundable' }],
+      fareAndSalesConditions: {
+        title: 'Fare and Sales conditions',
+        openAfterLoad: true,
+        text: 'This trip item cannot be canceled before nor after ticketing. Only refundable in case of strikes or weather conditions strongly impacting the trafic'
+      },
+      travelers: [{ firstName: 'Pamela', lastName: 'Olivia Gil' },
+      { firstName: 'Michael', lastName: 'Kael' }]
+    });
+
+    render(Card, {
+      productType: 'TRAIN',
+      segments: [{
+        origin: {
+          cityName: 'London'
+        },
+        destination: {
+          cityName: 'Chester'
+        },
+        start: {
+          date: { day: 11, month: 2, year: 2019 }, time: { hour: 11, minutes: 55 }
+        },
+        end: {
+          date: { day: 12, month: 2, year: 2019 }, time: { hour: 18, minutes: 11 }
+        }
+      }],
+      specificity: [{ icon: 'cancel', text: 'Non refundable' }]
+    })
+
+    render(Card, {
+      productType: 'TRAIN',
+      openAfterLoad: true,
+      segments: [{
+        origin: {
+          cityName: 'Köln Hbf'
+        },
+        destination: {
+          cityName: 'Düsseldorf'
+        },
+        start: {
+          date: { day: 11, month: 2, year: 2019 }, time: { hour: 23, minutes: 11 }
+        },
+        end: {
+          date: { day: 11, month: 2, year: 2019 }, time: { hour: 23, minutes: 31 }
+        },
+        supplier: {
+          name: 'Deutsche Bahn ICE',
+          vendorTransitNumber: 100,
+          code: 'DE/DBA',
+          cabinClass: 'Standard Advance Single | Non refundable',
+          vehicle: '',
+          amenities: [
+            { icon: 'bicycle', text: 'bicycle racks' }
+          ]
+        }
+      },
+      {
+        destination: {
+          cityName: 'Düsseldorf'
+        },
+        start: {
+          date: { day: 11, month: 2, year: 2019 }, time: { hour: 23, minutes: 31 }
+        },
+        end: {
+          date: { day: 11, month: 2, year: 2019 }, time: { hour: 23, minutes: 39 }
+        }
+      },
+      {
+        origin: {
+          cityName: 'Düsseldorf'
+        },
+        destination: {
+          cityName: 'Magdeburg Hbf'
+        },
+        start: {
+          date: { day: 11, month: 2, year: 2019 }, time: { hour: 23, minutes: 39 }
+        },
+        end: {
+          date: { day: 12, month: 2, year: 2019 }, time: { hour: 4, minutes: 1 }
+        },
+        supplier: {
+          name: 'Deutsche Bahn ICE',
+          vendorTransitNumber: 949,
+          code: 'DE/DBA',
+          cabinClass: 'Private couch',
+          vehicle: '',
+          amenities: [
+            { icon: 'wifi', text: 'Free Wifi' },
+            { icon: 'electrical_services', text: 'USB plugs and 220V European compliant plugs' },
+            { icon: 'dining', text: 'sandwiches and snacks on board' },
+            { icon: 'bed', text: 'included couches' }
+          ]
+        }
+      },
+      {
+        destination: {
+          cityName: 'Magdeburg Hbf'
+        },
+        start: {
+          date: { day: 12, month: 2, year: 2019 }, time: { hour: 4, minutes: 1 }
+        },
+        end: {
+          date: { day: 12, month: 2, year: 2019 }, time: { hour: 4, minutes: 15 }
+        }
+      },
+      {
+        origin: {
+          cityName: 'Magdeburg Hbf'
+        },
+        destination: {
+          cityName: 'Sachsendorf(Calbe)'
+        },
+        start: {
+          date: { day: 12, month: 2, year: 2019 }, time: { hour: 4, minutes: 15 }
+        },
+        end: {
+          date: { day: 12, month: 2, year: 2019 }, time: { hour: 4, minutes: 37 }
+        },
+        supplier: {
+          name: 'Deutsche Bahn RE',
+          vendorTransitNumber: 16303,
+          code: 'DE/DBA',
+          cabinClass: 'seats',
+          vehicle: '',
+          amenities: [
+            { icon: 'bicycle', text: 'bicycle racks' }
+          ]
+        }
+      },
+      {
+        destination: {
+          cityName: 'Sachsendorf(Calbe)'
+        },
+        start: {
+          date: { day: 12, month: 2, year: 2019 }, time: { hour: 4, minutes: 37 }
+        },
+        end: {
+          date: { day: 12, month: 2, year: 2019 }, time: { hour: 4, minutes: 43 }
+        }
+      },
+      {
+        origin: {
+          cityName: 'Sachsendorf(Calbe)'
+        },
+        destination: {
+          cityName: 'Halle(Saale)Hbf'
+        },
+        start: {
+          date: { day: 12, month: 2, year: 2019 }, time: { hour: 4, minutes: 43 }
+        },
+        end: {
+          date: { day: 12, month: 2, year: 2019 }, time: { hour: 6, minutes: 2 }
+        },
+        supplier: {
+          name: 'DB Bus',
+          code: 'DE/DBA',
+          cabinClass: '(seats)',
+          vehicle: 'Bus RE30',
+          amenities: [
+          ]
+        }
+      },
+      {
+        destination: {
+          cityName: 'Halle(Saale)Hbf'
+        },
+        start: {
+          date: { day: 12, month: 2, year: 2019 }, time: { hour: 6, minutes: 2 }
+        },
+        end: {
+          date: { day: 12, month: 2, year: 2019 }, time: { hour: 6, minutes: 14 }
+        }
+      },
+      {
+        origin: {
+          cityName: 'Halle(Saale)Hbf'
+        },
+        destination: {
+          cityName: 'Leipzig Hbf (tief)'
+        },
+        start: {
+          date: { day: 12, month: 2, year: 2019 }, time: { hour: 6, minutes: 14 }
+        },
+        end: {
+          date: { day: 12, month: 2, year: 2019 }, time: { hour: 6, minutes: 38 }
+        },
+        supplier: {
+          name: 'S 5X',
+          cabinClass: '(rapid transit)',
+          vehicle: '',
+          amenities: [
+          ]
+        }
+      }
+      ], specificity: [{ icon: 'cancel', text: 'Non refundable' }],
+      fareAndSalesConditions: {
+        title: 'Fare and Sales conditions',
+        openAfterLoad: true,
+        text: 'This trip item cannot be canceled before nor after ticketing. Only refundable in case of strikes or weather conditions strongly impacting the trafic'
+      },
+      travelers: [{ firstName: 'Pamela', lastName: 'Olivia Gil' },
+      { firstName: 'Michael', lastName: 'Kael' }]
+    })
+
+
+    render(Card, {
+      productType: 'HOTEL',
+      segments: [{
+        destination: {
+          cityName: 'Tokyo'
+        },
+        supplier: {
+          name: 'The Capitol Hotel Tokyo'
+        },
+        start: {
+          date: { day: 11, month: 2, year: 2019 }, time: { hour: 11, minutes: 55 }
+        },
+        end: {
+          date: { day: 12, month: 2, year: 2019 }, time: { hour: 18, minutes: 11 }
+        }
+      }],
+      specificity: [{ icon: 'cancel', text: 'Non refundable' },
+      { icon: 'receipt', text: 'Receipt printed by hotel' },
+      { icon: 'notifications', text: 'Late reception possible' }]
+    })
+
+    render(Card, {
+      productType: 'HOTEL',
+      openAfterLoad: true,
+      segments: [{
+        destination: {
+          cityName: 'Tokyo',
+          address: '2 Chome-10-3 Nagatacho, Chiyoda City, Tokyo 100-0014, Japan'
+        },
+        supplier: {
+          name: 'The Capitol Hotel Tokyo'
+        },
+        start: {
+          date: { day: 11, month: 2, year: 2019 }, time: { hour: 11, minutes: 55 }
+        },
+        end: {
+          date: { day: 12, month: 2, year: 2019 }, time: { hour: 18, minutes: 11 }
+        }
+      }],
+      checkinInstruction: {
+        text: `Additional fees apply to children 0-9 years
+    old for breakfast included rate plans. For more details, please contact the
+    property using the information on the reservation confirmation received
+    after booking.`},
+      fareAndSalesConditions: {
+        title: 'Total due at day of checkin',
+        openAfterLoad: true,
+        text: 'This trip item cannot be canceled before nor after ticketing. Only refundable in case of strikes or weather conditions strongly impacting the trafic'
+      },
+      specificity: [{ icon: 'cancel', text: 'Non refundable' },
+      { icon: 'receipt', text: 'Receipt printed by hotel' },
+      { icon: 'notifications', text: 'Late reception possible' }],
+      travelers: [{ firstName: 'Pamela', lastName: 'Olivia Gil' },
+      { firstName: 'Michael', lastName: 'Kael' }]
+    })
+
+
+
+    render(Card, {
+      productType: 'CAR',
+      segments: [{
+        destination: {
+          cityName: 'Paris Orly Airport',
+          address: 'Roissy Charles De Gaulle Tous Terminaux 95711 Roissy, France'
+        },
+        supplier: {
+          vehicle: 'Toyota Yaris or similar'
+        },
+        start: {
+          date: { day: 16, month: 5, year: 2019 }, time: { hour: 9, minutes: 0 }
+        },
+        end: {
+          date: { day: 18, month: 5, year: 2019 }, time: { hour: 19, minutes: 0 }
+        }
+      }],
+      specificity: [{ icon: 'cancel', text: 'Non refundable' }]
+    })
+
+    render(Card, {
+      productType: 'CAR',
+      openAfterLoad: true,
+      segments: [{
+        destination: {
+          cityName: 'Paris Orly Airport',
+          address: 'Roissy Charles De Gaulle Tous Terminaux 95711 Roissy, France'
+        },
+        supplier: {
+          name: 'AVIS',
+          vehicle: 'Toyota Yaris or similar',
+          amenities: [
+            { icon: 'wifi', text: 'Free Wifi' },
+            { icon: 'electrical_services', text: 'USB plugs and 220V European compliant plugs' },
+            { icon: 'tablet', text: 'Videos and games on board' },
+          ],
+          additionalFeatures: ['Unlimited mileage included',
+            'Collision damage waiver',
+            'Theft protection waiver',
+            '24-hr. roadside assistance']
+        },
+        start: {
+          date: { day: 16, month: 5, year: 2019 }, time: { hour: 9, minutes: 0 }
+        },
+        end: {
+          date: { day: 18, month: 5, year: 2019 }, time: { hour: 19, minutes: 0 }
+        }
+      }],
+      checkinInstruction: {
+        text: `Additional fees apply to children 0-9 years
+  old for breakfast included rate plans. For more details, please contact the
+  property using the information on the reservation confirmation received
+  after booking.`},
+      fareAndSalesConditions: {
+        title: 'Total due at day of checkin',
+        openAfterLoad: true,
+        text: 'This trip item cannot be canceled before nor after ticketing. Only refundable in case of strikes or weather conditions strongly impacting the trafic'
+      },
+      specificity: [{ icon: 'cancel', text: 'Non refundable' }],
+      travelers: [{ firstName: 'Pamela', lastName: 'Olivia Gil' },
+      { firstName: 'Michael', lastName: 'Kael' }]
+    })
+
+
+    render(Card, { linkedTo: 'FLIGHT', productType: 'INSURANCE' })
+    render(Card, {
+      linkedTo:'FLIGHT',
+      openAfterLoad: true,
+      productType: 'INSURANCE',
+      specificity: [
+        { icon: 'check', text: 'Trip cancellation' },
+        { icon: 'check', text: 'Trip interruption' },
+        { icon: 'check', text: 'Travel and baggage delay' },
+        { icon: 'check', text: '24/7 travel and emergency assistance' }],
+      fareAndSalesConditions: {
+        title: 'Plan details and disclosures',
+        openAfterLoad: true,
+        text: 'Please note that the payment method for your trip will also be applied for insurance. Recommended, offered, and sold by Allianz Global Assistance. Underwritten by Jefferson Insurance Company or BCS Insurance Company. Terms and exclusion (incl. for pre-existing conditions) apply.'
+      },
+      travelers: [{ firstName: 'Pamela', lastName: 'Olivia Gil' },
+      { firstName: 'Michael', lastName: 'Kael' }]
+    })
+
+
+    render(Card, {
+      productType: 'GROUND',
+      segments: [{
+        start: { date: { day: 20, month: 3, year: 2019 }, time: { hour: 0, minutes: 0 } },
+        supplier: { name: 'London one day travel card' }
+      }]
+    })
+
+
+
+    render(Card, {
+      productType: 'GROUND',
+      headOvalBorder: true,
+      segments: [{
+        start: { date: { day: 20, month: 3, year: 2019 }, time: { hour: 0, minutes: 0 } },
+        supplier: { name: 'London one day travel card' }
+      }]
+    })
+    render(Card, {
+      productType: 'GROUND',
+      lastOne: false,
+      segments: [{
+        start: { date: { day: 20, month: 3, year: 2019 }, time: { hour: 0, minutes: 0 } },
+        supplier: { name: 'London one day travel card' }
+      }]
+    })
+
+    render(Card, {
+      productType: 'GROUND',
+      headOvalBorder: true,
+      segments: [{
+        start: { date: { day: 21, month: 3, year: 2019 }, time: { hour: 0, minutes: 0 } },
+        supplier: { name: 'London one day travel card' }
+      }]
+    })
+
+    render(Card, {
+      productType: 'GROUND',
+      lastOne: false,
+      segments: [{
+        start: { date: { day: 20, month: 3, year: 2019 }, time: { hour: 0, minutes: 0 } },
+        supplier: { name: 'London one day travel card' }
+      }]
+    })
+
+    render(Card, {
+      productType: 'GROUND',
+      lastOne: false,
+      headOvalBorder: true,
+      segments: [{
+        start: { date: { day: 21, month: 3, year: 2019 }, time: { hour: 0, minutes: 0 } },
+        supplier: { name: 'London one day travel card' }
+      }]
+    })
+
+    render(Card, {
+      productType: 'GROUND',
+      headOvalBorder: true,
+      segments: [{
+        start: { date: { day: 22, month: 3, year: 2019 }, time: { hour: 0, minutes: 0 } },
+        supplier: { name: 'London one day travel card' }
+      }]
+    })
+
+    render(Itinerary, {
+      items: [{
+        productType: 'FLIGHT',
+        tripType: 'ONE_WAY',
+        segments: [{
+          origin: {
+            name: 'Roissy-Charles de Gaulle',
+            cityName: 'Paris', code: 'CDG',
+            coordinates: { latitude: 2.55, longitude: 49.012798 }
+          },
+          destination: {
+            name: 'Schipol',
+            cityName: 'Amsterdam', code: 'AMS',
+            coordinates: { latitude: 4.76389, longitude: 52.308601 }
+          },
+          start: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 8, minutes: 15 },
+            timezone: '+01:00'
+          },
+          end: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 9, minutes: 40 },
+            timezone: '+01:00'
+          },
+          supplier: {
+            name: 'KLM',
+            code: 'kl',
+            vendorTransitNumber: 2008,
+            operatingCompany: 'Air France',
+            cabinClass: 'Economy',
+            classCode: 'ECONOMY',
+            vehicle: 'Airbus A320',
+            amenities: [
+              { icon: 'wifi', text: 'Free Wifi' },
+              { icon: 'electrical_services', text: 'USB plugs and 220V European compliant plugs' },
+              { icon: 'tablet', text: 'Videos and games on board' },
+              { icon: 'dining', text: 'Fresh meals and continental cuisine' }
+            ]
+          }
+        },
+        {
+          destination: {
+            name: 'Schipol',
+            cityName: 'Amsterdam', code: 'AMS',
+            coordinates: { latitude: 2.55, longitude: 49.012798 }
+          },
+          start: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 9, minutes: 40 },
+            timezone: '+01:00'
+          },
+          end: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 11, minutes: 0 },
+            timezone: '+01:00'
+          }
+        }, {
+          origin: {
+            name: 'Schipol',
+            cityName: 'Amsterdam', code: 'AMS',
+            coordinates: { latitude: 2.55, longitude: 49.012798 }
+          },
+          destination: {
+            name: 'Taiwan-Taoyuan Airport',
+            cityName: 'Taipei', code: 'TPE',
+            coordinates: { latitude: 121.233002, longitude: 25.0777 }
+          },
+          supplier: {
+            name: 'China Airlines',
+            code: 'mu',
+            vendorTransitNumber: 9292,
+            operatingCompany: 'Air France',
+            cabinClass: 'Economy',
+            classCode: 'ECONOMY',
+            vehicle: 'Airbus A350-900',
+            amenities: [
+              { icon: 'wifi', text: 'Free Wifi' },
+              { icon: 'electrical_services', text: 'USB plugs and 220V European compliant plugs' },
+              { icon: 'tablet', text: 'Videos and games on board' },
+              { icon: 'dining', text: 'Fresh meals and continental cuisine' }
+            ]
+          },
+          start: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 11, minutes: 0 },
+            timezone: '+01:00'
+          },
+          end: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 6, minutes: 35 },
+            timezone: '+08:00'
+          }
+        }, {
+          destination: {
+            name: 'Taiwan-Taoyuan Airport',
+            cityName: 'Taipei', code: 'TPE',
+            coordinates: { latitude: 121.233002, longitude: 25.0777 }
+          },
+          start: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 6, minutes: 35 }
+          },
+          end: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 8, minutes: 50 }
+          }
+        }, {
+          origin: {
+            name: 'Taiwan-Taoyuan Airport',
+            cityName: 'Taipei', code: 'TPE',
+            coordinates: { latitude: 121.233002, longitude: 25.0777 }
+          },
+          destination: {
+            name: 'Narita Airport',
+            cityName: 'Tokyo', code: 'NRT',
+            coordinates: { latitude: 140.386001587, longitude: 35.7647018433 }
+          },
+          supplier: {
+            name: 'China Airlines',
+            code: 'mu',
+            vendorTransitNumber: 100,
+            cabinClass: 'Economy',
+            classCode: 'ECONOMY',
+            vehicle: 'Airbus A350-900',
+            amenities: [
+              { icon: 'wifi', text: 'Free Wifi' },
+              { icon: 'electrical_services', text: 'USB plugs and 220V European compliant plugs' },
+              { icon: 'tablet', text: 'Videos and games on board' },
+              { icon: 'dining', text: 'Fresh meals and continental cuisine' }
+            ]
+          },
+          start: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 8, minutes: 50 },
+            timezone: '+08:00'
+          },
+          end: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 13, minutes: 15 },
+            timezone: '+09:00'
+          }
+        }],
+        specificity: [{ icon: 'cancel', text: 'Non refundable' }],
+        fareAndSalesConditions: {
+          title: 'Fare and Sales conditions',
+          text: 'This trip item cannot be canceled before nor after ticketing. Only refundable in case of strikes or weather conditions strongly impacting the trafic'
+        },
+        travelers: [{ firstName: 'Pamela', lastName: 'Olivia Gil' },
+        { firstName: 'Michael', lastName: 'Kael' }]
+      },
+      {
+        productType: 'HOTEL',
+        segments: [{
+          destination: {
+            cityName: 'Tokyo',
+            address: '2 Chome-10-3 Nagatacho, Chiyoda City, Tokyo 100-0014, Japan'
+          },
+          supplier: {
+            name: 'The Capitol Hotel Tokyo'
+          },
+          start: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 17, minutes: 0 }
+          },
+          end: {
+            date: { day: 5, month: 4, year: 2020 }, time: { hour: 10, minutes: 0 }
+          }
+        }],
+        checkinInstruction: {
+          text: `Additional fees apply to children 0-9 years
+        old for breakfast included rate plans. For more details, please contact the
+        property using the information on the reservation confirmation received
+        after booking.`},
+        fareAndSalesConditions: {
+          title: 'Total due at day of checkin',
+          text: 'This trip item cannot be canceled before nor after ticketing. Only refundable in case of strikes or weather conditions strongly impacting the trafic'
+        },
+        specificity: [{ icon: 'cancel', text: 'Non refundable' },
+        { icon: 'receipt', text: 'Receipt printed by hotel' },
+        { icon: 'notifications', text: 'Late reception possible' }],
+        travelers: [{ firstName: 'Pamela', lastName: 'Olivia Gil' },
+        { firstName: 'Michael', lastName: 'Kael' }]
+      }
+      ]
+    })
+
+
+    render(Itinerary, {
+      actionType: 'CANCEL', items: [{
+        productType: 'FLIGHT',
+        tripType: 'ONE_WAY',
+        segments: [{
+          origin: {
+            name: 'Roissy-Charles de Gaulle',
+            cityName: 'Paris', code: 'CDG',
+            coordinates: { latitude: 2.55, longitude: 49.012798 }
+          },
+          destination: {
+            name: 'Schipol',
+            cityName: 'Amsterdam', code: 'AMS',
+            coordinates: { latitude: 4.76389, longitude: 52.308601 }
+          },
+          start: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 8, minutes: 15 }
+          },
+          end: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 9, minutes: 40 }
+          },
+          supplier: {
+            name: 'KLM',
+            code: 'kl',
+            vendorTransitNumber: 2008,
+            operatingCompany: 'Air France',
+            cabinClass: 'Economy',
+            classCode: 'ECONOMY',
+            vehicle: 'Airbus A320',
+            amenities: [
+              { icon: 'wifi', text: 'Free Wifi' },
+              { icon: 'electrical_services', text: 'USB plugs and 220V European compliant plugs' },
+              { icon: 'tablet', text: 'Videos and games on board' },
+              { icon: 'dining', text: 'Fresh meals and continental cuisine' }
+            ]
+          }
+        }],
+        specificity: [{ icon: 'cancel', text: 'Non refundable' }],
+        fareAndSalesConditions: {
+          title: 'Fare and Sales conditions',
+          text: 'This trip item cannot be canceled before nor after ticketing. Only refundable in case of strikes or weather conditions strongly impacting the trafic'
+        },
+        travelers: [{ firstName: 'Pamela', lastName: 'Olivia Gil' },
+        { firstName: 'Michael', lastName: 'Kael' }]
+      }]
+    })
+
+    render(Itinerary, {
+      resizeInFontSize: true,
+      items: [{
+        productType: 'HOTEL',
+        openAfterLoad: true,
+        segments: [{
+          destination: {
+            cityName: 'Tokyo',
+            address: '2 Chome-10-3 Nagatacho, Chiyoda City, Tokyo 100-0014, Japan'
+          },
+          supplier: {
+            name: 'The Capitol Hotel Tokyo'
+          },
+          start: {
+            date: { day: 11, month: 2, year: 2019 }, time: { hour: 11, minutes: 55 }
+          },
+          end: {
+            date: { day: 12, month: 2, year: 2019 }, time: { hour: 18, minutes: 11 }
+          }
+        }],
+        checkinInstruction: {
+          text: `Additional fees apply to children 0-9 years
+  old for breakfast included rate plans. For more details, please contact the
+  property using the information on the reservation confirmation received
+  after booking.`},
+        fareAndSalesConditions: {
+          title: 'Total due at day of checkin',
+          openAfterLoad: true,
+          text: 'This trip item cannot be canceled before nor after ticketing. Only refundable in case of strikes or weather conditions strongly impacting the trafic'
+        },
+        specificity: [{ icon: 'cancel', text: 'Non refundable' },
+        { icon: 'receipt', text: 'Receipt printed by hotel' },
+        { icon: 'notifications', text: 'Late reception possible' }],
+        travelers: [{ firstName: 'Pamela', lastName: 'Olivia Gil' },
+        { firstName: 'Michael', lastName: 'Kael' }]
+      }]
+    })
+
+
+    render(Itinerary, {
+      resizeInFontSize: true,
+      items: [{
+        productType: 'FLIGHT',
+        tripType: 'ONE_WAY',
+        segments: [{
+          origin: {
+            name: 'Roissy-Charles de Gaulle',
+            cityName: 'Paris', code: 'CDG',
+            coordinates: { latitude: 2.55, longitude: 49.012798 }
+          },
+          destination: {
+            name: 'Schipol',
+            cityName: 'Amsterdam', code: 'AMS',
+            coordinates: { latitude: 4.76389, longitude: 52.308601 }
+          },
+          start: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 8, minutes: 15 },
+            timezone: '+01:00'
+          },
+          end: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 9, minutes: 40 },
+            timezone: '+01:00'
+          },
+          supplier: {
+            name: 'KLM',
+            code: 'kl',
+            vendorTransitNumber: 2008,
+            operatingCompany: 'Air France',
+            cabinClass: 'Economy',
+            classCode: 'ECONOMY',
+            vehicle: 'Airbus A320',
+            amenities: [
+              { icon: 'wifi', text: 'Free Wifi' },
+              { icon: 'electrical_services', text: 'USB plugs and 220V European compliant plugs' },
+              { icon: 'tablet', text: 'Videos and games on board' },
+              { icon: 'dining', text: 'Fresh meals and continental cuisine' }
+            ]
+          }
+        },
+        {
+          destination: {
+            name: 'Schipol',
+            cityName: 'Amsterdam', code: 'AMS',
+            coordinates: { latitude: 2.55, longitude: 49.012798 }
+          },
+          start: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 9, minutes: 40 },
+            timezone: '+01:00'
+          },
+          end: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 11, minutes: 0 },
+            timezone: '+01:00'
+          }
+        }, {
+          origin: {
+            name: 'Schipol',
+            cityName: 'Amsterdam', code: 'AMS',
+            coordinates: { latitude: 2.55, longitude: 49.012798 }
+          },
+          destination: {
+            name: 'Taiwan-Taoyuan Airport',
+            cityName: 'Taipei', code: 'TPE',
+            coordinates: { latitude: 121.233002, longitude: 25.0777 }
+          },
+          supplier: {
+            name: 'China Airlines',
+            code: 'mu',
+            vendorTransitNumber: 9292,
+            operatingCompany: 'Air France',
+            cabinClass: 'Economy',
+            classCode: 'ECONOMY',
+            vehicle: 'Airbus A350-900',
+            amenities: [
+              { icon: 'wifi', text: 'Free Wifi' },
+              { icon: 'electrical_services', text: 'USB plugs and 220V European compliant plugs' },
+              { icon: 'tablet', text: 'Videos and games on board' },
+              { icon: 'dining', text: 'Fresh meals and continental cuisine' }
+            ]
+          },
+          start: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 11, minutes: 0 },
+            timezone: '+01:00'
+          },
+          end: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 6, minutes: 35 },
+            timezone: '+08:00'
+          }
+        }, {
+          destination: {
+            name: 'Taiwan-Taoyuan Airport',
+            cityName: 'Taipei', code: 'TPE',
+            coordinates: { latitude: 121.233002, longitude: 25.0777 }
+          },
+          start: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 6, minutes: 35 }
+          },
+          end: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 8, minutes: 50 }
+          }
+        }, {
+          origin: {
+            name: 'Taiwan-Taoyuan Airport',
+            cityName: 'Taipei', code: 'TPE',
+            coordinates: { latitude: 121.233002, longitude: 25.0777 }
+          },
+          destination: {
+            name: 'Narita Airport',
+            cityName: 'Tokyo', code: 'NRT',
+            coordinates: { latitude: 140.386001587, longitude: 35.7647018433 }
+          },
+          supplier: {
+            name: 'China Airlines',
+            code: 'mu',
+            vendorTransitNumber: 100,
+            cabinClass: 'Economy',
+            classCode: 'ECONOMY',
+            vehicle: 'Airbus A350-900',
+            amenities: [
+              { icon: 'wifi', text: 'Free Wifi' },
+              { icon: 'electrical_services', text: 'USB plugs and 220V European compliant plugs' },
+              { icon: 'tablet', text: 'Videos and games on board' },
+              { icon: 'dining', text: 'Fresh meals and continental cuisine' }
+            ]
+          },
+          start: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 8, minutes: 50 },
+            timezone: '+08:00'
+          },
+          end: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 13, minutes: 15 },
+            timezone: '+09:00'
+          }
+        }],
+        specificity: [{ icon: 'cancel', text: 'Non refundable' }],
+        fareAndSalesConditions: {
+          title: 'Fare and Sales conditions',
+          text: 'This trip item cannot be canceled before nor after ticketing. Only refundable in case of strikes or weather conditions strongly impacting the trafic'
+        },
+        travelers: [{ firstName: 'Pamela', lastName: 'Olivia Gil' },
+        { firstName: 'Michael', lastName: 'Kael' }]
+      },
+      {
+        productType: 'HOTEL',
+        segments: [{
+          destination: {
+            cityName: 'Tokyo',
+            address: '2 Chome-10-3 Nagatacho, Chiyoda City, Tokyo 100-0014, Japan'
+          },
+          supplier: {
+            name: 'The Capitol Hotel Tokyo'
+          },
+          start: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 17, minutes: 0 }
+          },
+          end: {
+            date: { day: 5, month: 4, year: 2020 }, time: { hour: 10, minutes: 0 }
+          }
+        }],
+        checkinInstruction: {
+          text: `Additional fees apply to children 0-9 years
+        old for breakfast included rate plans. For more details, please contact the
+        property using the information on the reservation confirmation received
+        after booking.`},
+        fareAndSalesConditions: {
+          title: 'Total due at day of checkin',
+          text: 'This trip item cannot be canceled before nor after ticketing. Only refundable in case of strikes or weather conditions strongly impacting the trafic'
+        },
+        specificity: [{ icon: 'cancel', text: 'Non refundable' },
+        { icon: 'receipt', text: 'Receipt printed by hotel' },
+        { icon: 'notifications', text: 'Late reception possible' }],
+        travelers: [{ firstName: 'Pamela', lastName: 'Olivia Gil' },
+        { firstName: 'Michael', lastName: 'Kael' }]
+      }
+      ]
+    })
+
+    render(Itinerary, {
+      stayClosed: true, items: Array.from(Array(20), (_, i) =>
+      ({
+        productType: 'GROUND',
+        segments: [{
+          start: { date: { day: 9 + i, month: 3, year: 2019 }, time: { hour: 0, minutes: 0 } },
+          supplier: { name: 'London one day travel card' }
+        }]
+      }))
+    })
+
+
+    render(Itinerary, {
+      translate: () => "hodor",
+      items: [{
+        productType: 'FLIGHT',
+        tripType: 'ONE_WAY',
+        segments: [{
+          origin: {
+            name: 'hodor',
+            cityName: 'hodor', code: 'CDG',
+            coordinates: { latitude: 2.55, longitude: 49.012798 }
+          },
+          destination: {
+            name: 'hodor',
+            cityName: 'hodor', code: 'AMS',
+            coordinates: { latitude: 4.76389, longitude: 52.308601 }
+          },
+          start: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 8, minutes: 15 },
+            timezone: '+01:00'
+          },
+          end: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 9, minutes: 40 },
+            timezone: '+01:00'
+          },
+          supplier: {
+            name: 'KLM',
+            code: 'kl',
+            vendorTransitNumber: 2008,
+            operatingCompany: 'Hodor',
+            cabinClass: 'hodor',
+            classCode: 'ECONOMY',
+            vehicle: 'Airbus A320',
+            amenities: [
+              { icon: 'wifi', text: 'hodor' },
+              { icon: 'electrical_services', text: 'hodor' },
+              { icon: 'tablet', text: 'hodor' },
+              { icon: 'dining', text: 'hodor' }
+            ]
+          }
+        },
+        {
+          destination: {
+            name: 'hodor',
+            cityName: 'hodor', code: 'AMS',
+            coordinates: { latitude: 2.55, longitude: 49.012798 }
+          },
+          start: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 9, minutes: 40 },
+            timezone: '+01:00'
+          },
+          end: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 11, minutes: 0 },
+            timezone: '+01:00'
+          }
+        }, {
+          origin: {
+            name: 'hodor',
+            cityName: 'hodor', code: 'AMS',
+            coordinates: { latitude: 2.55, longitude: 49.012798 }
+          },
+          destination: {
+            name: 'hodor',
+            cityName: 'hodor', code: 'TPE',
+            coordinates: { latitude: 121.233002, longitude: 25.0777 }
+          },
+          supplier: {
+            name: 'hodor',
+            code: 'mu',
+            vendorTransitNumber: 9292,
+            operatingCompany: 'hodor',
+            cabinClass: 'hodor',
+            classCode: 'ECONOMY',
+            vehicle: 'Airbus A350-900',
+            amenities: [
+              { icon: 'wifi', text: 'hodor' },
+              { icon: 'electrical_services', text: 'hodor' },
+              { icon: 'tablet', text: 'hodor' },
+              { icon: 'dining', text: 'hodor' }
+            ]
+          },
+          start: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 11, minutes: 0 },
+            timezone: '+01:00'
+          },
+          end: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 6, minutes: 35 },
+            timezone: '+08:00'
+          }
+        }, {
+          destination: {
+            name: 'hodor',
+            cityName: 'hodor', code: 'TPE',
+            coordinates: { latitude: 121.233002, longitude: 25.0777 }
+          },
+          start: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 6, minutes: 35 }
+          },
+          end: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 8, minutes: 50 }
+          }
+        }, {
+          origin: {
+            name: 'hodor',
+            cityName: 'hodor', code: 'TPE',
+            coordinates: { latitude: 121.233002, longitude: 25.0777 }
+          },
+          destination: {
+            name: 'hodor',
+            cityName: 'hodor', code: 'NRT',
+            coordinates: { latitude: 140.386001587, longitude: 35.7647018433 }
+          },
+          supplier: {
+            name: 'hodor',
+            code: 'mu',
+            vendorTransitNumber: 100,
+            cabinClass: 'hodor',
+            classCode: 'ECONOMY',
+            vehicle: 'hodor',
+            amenities: [
+              { icon: 'wifi', text: 'hodor' },
+              { icon: 'electrical_services', text: 'hodor' },
+              { icon: 'tablet', text: 'hodor' },
+              { icon: 'dining', text: 'hodor' }
+            ]
+          },
+          start: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 8, minutes: 50 },
+            timezone: '+08:00'
+          },
+          end: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 13, minutes: 15 },
+            timezone: '+09:00'
+          }
+        }],
+        specificity: [{ icon: 'cancel', text: 'hodor' }],
+        fareAndSalesConditions: {
+          title: 'hodor',
+          text: 'hodor'
+        },
+        travelers: [{ firstName: 'Hodor', lastName: 'Hodor' },
+        { firstName: 'Hodor', lastName: 'Hodor' }]
+      },
+      {
+        productType: 'HOTEL',
+        segments: [{
+          destination: {
+            cityName: 'Hodor',
+            address: 'hodor'
+          },
+          supplier: {
+            name: 'hodor'
+          },
+          start: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 17, minutes: 0 }
+          },
+          end: {
+            date: { day: 5, month: 4, year: 2020 }, time: { hour: 10, minutes: 0 }
+          }
+        }],
+        checkinInstruction: {
+          text: `hodor`
+        },
+        fareAndSalesConditions: {
+          title: 'hodor',
+          text: 'hodor'
+        },
+        specificity: [{ icon: 'cancel', text: 'hodor' },
+        { icon: 'receipt', text: 'hodor' },
+        { icon: 'notifications', text: 'hodor' }],
+        travelers: [{ firstName: 'Hodor', lastName: 'Hodor' },
+        { firstName: 'Hodor', lastName: 'Hodor' }]
+      }
+      ]
+    })
+
+
+    render(Itinerary, {
+      translate: ((text) => (
+        {
+          to: 'para',
+          itinerary: 'Itinerário',
+          in_our_timezone: 'Fuso horário daqui',
+          travel_time: 'Tempo da viagem',
+          details: 'Detalhes',
+          arrives: 'Chegada',
+          the_next_day: 'o proximo dia',
+          on: 'à',
+          duration: 'Duração',
+          layover_in: 'escala em',
+          total_co_footprint: 'Emissões de CO2',
+          based_on_the_transport_mode_you_are_using: 'De acordo com o modo de transporte que você utiliza',
+          operated_by: 'operado por',
+          checkin_instruction: 'Instruções de check-in',
+          from: 'desde',
+          until: 'até',
+          dia_s_: 'dia(s)',
+          stop_s_: 'parada(s)',
+          night_s_: 'noite(s)',
+          overnight: 'Durante a noite',
+          days_after: 'dias depois'
+        })[(text || '').toLowerCase()]),
+      items: [{
+        productType: 'FLIGHT',
+        tripType: 'ONE_WAY',
+        segments: [{
+          origin: {
+            name: 'Roissy-Charles de Gaulle',
+            cityName: 'Paris', code: 'CDG',
+            coordinates: { latitude: 2.55, longitude: 49.012798 }
+          },
+          destination: {
+            name: 'Schipol',
+            cityName: 'Amsterdam', code: 'AMS',
+            coordinates: { latitude: 4.76389, longitude: 52.308601 }
+          },
+          start: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 8, minutes: 15 },
+            timezone: '+01:00'
+          },
+          end: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 9, minutes: 40 },
+            timezone: '+01:00'
+          },
+          supplier: {
+            name: 'KLM',
+            code: 'kl',
+            vendorTransitNumber: 2008,
+            operatingCompany: 'Air France',
+            cabinClass: 'Economy',
+            classCode: 'ECONOMY',
+            vehicle: 'Airbus A320',
+            amenities: [
+              { icon: 'wifi', text: 'Free Wifi' },
+              { icon: 'electrical_services', text: 'USB plugs and 220V European compliant plugs' },
+              { icon: 'tablet', text: 'Videos and games on board' },
+              { icon: 'dining', text: 'Fresh meals and continental cuisine' }
+            ]
+          }
+        },
+        {
+          destination: {
+            name: 'Schipol',
+            cityName: 'Amsterdam', code: 'AMS',
+            coordinates: { latitude: 2.55, longitude: 49.012798 }
+          },
+          start: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 9, minutes: 40 },
+            timezone: '+01:00'
+          },
+          end: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 11, minutes: 0 },
+            timezone: '+01:00'
+          }
+        }, {
+          origin: {
+            name: 'Schipol',
+            cityName: 'Amsterdam', code: 'AMS',
+            coordinates: { latitude: 2.55, longitude: 49.012798 }
+          },
+          destination: {
+            name: 'Taiwan-Taoyuan Airport',
+            cityName: 'Taipei', code: 'TPE',
+            coordinates: { latitude: 121.233002, longitude: 25.0777 }
+          },
+          supplier: {
+            name: 'China Airlines',
+            code: 'mu',
+            vendorTransitNumber: 9292,
+            operatingCompany: 'Air France',
+            cabinClass: 'Economy',
+            classCode: 'ECONOMY',
+            vehicle: 'Airbus A350-900',
+            amenities: [
+              { icon: 'wifi', text: 'Free Wifi' },
+              { icon: 'electrical_services', text: 'USB plugs and 220V European compliant plugs' },
+              { icon: 'tablet', text: 'Videos and games on board' },
+              { icon: 'dining', text: 'Fresh meals and continental cuisine' }
+            ]
+          },
+          start: {
+            date: { day: 28, month: 3, year: 2020 }, time: { hour: 11, minutes: 0 },
+            timezone: '+01:00'
+          },
+          end: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 6, minutes: 35 },
+            timezone: '+08:00'
+          }
+        }, {
+          destination: {
+            name: 'Taiwan-Taoyuan Airport',
+            cityName: 'Taipei', code: 'TPE',
+            coordinates: { latitude: 121.233002, longitude: 25.0777 }
+          },
+          start: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 6, minutes: 35 }
+          },
+          end: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 8, minutes: 50 }
+          }
+        }, {
+          origin: {
+            name: 'Taiwan-Taoyuan Airport',
+            cityName: 'Taipei', code: 'TPE',
+            coordinates: { latitude: 121.233002, longitude: 25.0777 }
+          },
+          destination: {
+            name: 'Narita Airport',
+            cityName: 'Tokyo', code: 'NRT',
+            coordinates: { latitude: 140.386001587, longitude: 35.7647018433 }
+          },
+          supplier: {
+            name: 'China Airlines',
+            code: 'mu',
+            vendorTransitNumber: 100,
+            cabinClass: 'Economy',
+            classCode: 'ECONOMY',
+            vehicle: 'Airbus A350-900',
+            amenities: [
+              { icon: 'wifi', text: 'Free Wifi' },
+              { icon: 'electrical_services', text: 'USB plugs and 220V European compliant plugs' },
+              { icon: 'tablet', text: 'Videos and games on board' },
+              { icon: 'dining', text: 'Fresh meals and continental cuisine' }
+            ]
+          },
+          start: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 8, minutes: 50 },
+            timezone: '+08:00'
+          },
+          end: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 13, minutes: 15 },
+            timezone: '+09:00'
+          }
+        }],
+        specificity: [{ icon: 'cancel', text: 'Não reembolsável' }],
+        fareAndSalesConditions: {
+          title: 'Tarifa e Venda condições',
+          text: 'Esse elemento da viagem não pode ser cancelado nem antes ou depois da emissão do bilhete. Só é reembolsável em caso de uma greve ou de condições de tempo ruim impactando fortemente o transito'
+        },
+        travelers: [{ firstName: 'Pamela', lastName: 'Olivia Gil' },
+        { firstName: 'Michael', lastName: 'Kael' }]
+      },
+      {
+        productType: 'HOTEL',
+        segments: [{
+          destination: {
+            cityName: 'Tokyo',
+            address: '2 Chome-10-3 Nagatacho, Chiyoda City, Tokyo 100-0014, Japan'
+          },
+          supplier: {
+            name: 'The Capitol Hotel Tokyo'
+          },
+          start: {
+            date: { day: 29, month: 3, year: 2020 }, time: { hour: 17, minutes: 0 }
+          },
+          end: {
+            date: { day: 5, month: 4, year: 2020 }, time: { hour: 10, minutes: 0 }
+          }
+        }],
+        checkinInstruction: {
+          text: `Applicam-se custos adicionais a crianças de 0 e 9 anos
+          com tarifas de café da manha. Para mais informaçao, por favor entre em contato
+          com a propriedade usando as informacões sobre a confirmação da reserva recebida depois
+          do pagamento`},
+        fareAndSalesConditions: {
+          title: 'Total devido pelo dia do Check-In',
+          text: 'Esse elemento da viagem não pode ser cancelado nem antes ou depois da emissão do bilhete. Só é reembolsável em caso de uma greve ou de condições de tempo ruim impactando fortemente o transito'
+        },
+        specificity: [{ icon: 'cancel', text: 'Não reembolsável' },
+        { icon: 'receipt', text: 'Recibo impresso por o hotel' },
+        { icon: 'notifications', text: 'Possível recepção tardia' }],
+        travelers: [{ firstName: 'Pamela', lastName: 'Olivia Gil' },
+        { firstName: 'Michael', lastName: 'Kael' }]
+      }
+      ]
+    })
+
+    render(Itinerary, {
+      resizeInFontSize: true,
+      stayClosed: true,
+      items: [
+        {
+          productType: "FLIGHT",
+          tripType: "ONE_WAY",
+          segments: [
+            {
+              origin: {
+                name: "Roissy-Charles de Gaulle",
+                cityName: "Paris",
+                code: "CDG",
+                coordinates: { latitude: 2.55, longitude: 49.012798 },
+              },
+              destination: {
+                name: "Schipol",
+                cityName: "Amsterdam",
+                code: "AMS",
+                coordinates: { latitude: 4.76389, longitude: 52.308601 },
+              },
+              start: {
+                date: { day: 28, month: 3, year: 2020 },
+                time: { hour: 8, minutes: 15 },
+                timezone: "+01:00",
+              },
+              end: {
+                date: { day: 28, month: 3, year: 2020 },
+                time: { hour: 9, minutes: 40 },
+                timezone: "+01:00",
+              },
+              supplier: {
+                name: "KLM",
+                code: "kl",
+                vendorTransitNumber: 2008,
+                operatingCompany: "Air France",
+                cabinClass: "Economy",
+                classCode: "ECONOMY",
+                vehicle: "Airbus A320",
+                amenities: [
+                  { icon: "wifi", text: "Free Wifi" },
+                  {
+                    icon: "electrical_services",
+                    text: "USB plugs and 220V European compliant plugs",
+                  },
+                  { icon: "tablet", text: "Videos and games on board" },
+                  {
+                    icon: "dining",
+                    text: "Fresh meals and continental cuisine",
+                  },
+                ],
+              },
+            },
+            {
+              destination: {
+                name: "Schipol",
+                cityName: "Amsterdam",
+                code: "AMS",
+                coordinates: { latitude: 2.55, longitude: 49.012798 },
+              },
+              start: {
+                date: { day: 28, month: 3, year: 2020 },
+                time: { hour: 9, minutes: 40 },
+                timezone: "+01:00",
+              },
+              end: {
+                date: { day: 28, month: 3, year: 2020 },
+                time: { hour: 11, minutes: 0 },
+                timezone: "+01:00",
+              },
+            },
+            {
+              origin: {
+                name: "Schipol",
+                cityName: "Amsterdam",
+                code: "AMS",
+                coordinates: { latitude: 2.55, longitude: 49.012798 },
+              },
+              destination: {
+                name: "Taiwan-Taoyuan Airport",
+                cityName: "Taipei",
+                code: "TPE",
+                coordinates: { latitude: 121.233002, longitude: 25.0777 },
+              },
+              supplier: {
+                name: "China Airlines",
+                code: "mu",
+                vendorTransitNumber: 9292,
+                operatingCompany: "Air France",
+                cabinClass: "Economy",
+                classCode: "ECONOMY",
+                vehicle: "Airbus A350-900",
+                amenities: [
+                  { icon: "wifi", text: "Free Wifi" },
+                  {
+                    icon: "electrical_services",
+                    text: "USB plugs and 220V European compliant plugs",
+                  },
+                  { icon: "tablet", text: "Videos and games on board" },
+                  {
+                    icon: "dining",
+                    text: "Fresh meals and continental cuisine",
+                  },
+                ],
+              },
+              start: {
+                date: { day: 28, month: 3, year: 2020 },
+                time: { hour: 11, minutes: 0 },
+                timezone: "+01:00",
+              },
+              end: {
+                date: { day: 29, month: 3, year: 2020 },
+                time: { hour: 6, minutes: 35 },
+                timezone: "+08:00",
+              },
+            },
+            {
+              destination: {
+                name: "Taiwan-Taoyuan Airport",
+                cityName: "Taipei",
+                code: "TPE",
+                coordinates: { latitude: 121.233002, longitude: 25.0777 },
+              },
+              start: {
+                date: { day: 29, month: 3, year: 2020 },
+                time: { hour: 6, minutes: 35 },
+              },
+              end: {
+                date: { day: 29, month: 3, year: 2020 },
+                time: { hour: 8, minutes: 50 },
+              },
+            },
+            {
+              origin: {
+                name: "Taiwan-Taoyuan Airport",
+                cityName: "Taipei",
+                code: "TPE",
+                coordinates: { latitude: 121.233002, longitude: 25.0777 },
+              },
+              destination: {
+                name: "Narita Airport",
+                cityName: "Tokyo",
+                code: "NRT",
+                coordinates: {
+                  latitude: 140.386001587,
+                  longitude: 35.7647018433,
+                },
+              },
+              supplier: {
+                name: "China Airlines",
+                code: "mu",
+                vendorTransitNumber: 100,
+                cabinClass: "Economy",
+                classCode: "ECONOMY",
+                vehicle: "Airbus A350-900",
+                amenities: [
+                  { icon: "wifi", text: "Free Wifi" },
+                  {
+                    icon: "electrical_services",
+                    text: "USB plugs and 220V European compliant plugs",
+                  },
+                  { icon: "tablet", text: "Videos and games on board" },
+                  {
+                    icon: "dining",
+                    text: "Fresh meals and continental cuisine",
+                  },
+                ],
+              },
+              start: {
+                date: { day: 29, month: 3, year: 2020 },
+                time: { hour: 8, minutes: 50 },
+                timezone: "+08:00",
+              },
+              end: {
+                date: { day: 29, month: 3, year: 2020 },
+                time: { hour: 13, minutes: 15 },
+                timezone: "+09:00",
+              },
+            },
+          ],
+          specificity: [{ icon: "cancel", text: "Non refundable" }],
+          fareAndSalesConditions: {
+            title: "Fare and Sales conditions",
+            text: "This trip item cannot be canceled beforee nor after ticketing. Only refundable in case of strikes or weather conditions strongly impacting the trafic",
+          },
+          travelers: [
+            { firstName: "Pamela", lastName: "Olivia Gil" },
+            { firstName: "Michael", lastName: "Kael" },
+          ],
+        },
+        {
+          productType: "HOTEL",
+          segments: [
+            {
+              destination: {
+                cityName: "Tokyo",
+                address:
+                  "2 Chome-10-3 Nagatacho, Chiyoda City, Tokyo 100-0014, Japan",
+              },
+              supplier: {
+                name: "The Capitol Hotel Tokyo",
+              },
+              start: {
+                date: { day: 29, month: 3, year: 2020 },
+                time: { hour: 17, minutes: 0 },
+              },
+              end: {
+                date: { day: 5, month: 4, year: 2020 },
+                time: { hour: 10, minutes: 0 },
+              },
+            },
+          ],
+          checkinInstruction: {
+            text: `Additional fees apply to children 0-9 years
+              old for breakfast included rate plans. For more details, please contact the
+              property using the information on the reservation confirmation received
+              after booking.`,
+          },
+          fareAndSalesConditions: {
+            title: "Total due at day of checkin",
+            text: "This trip item cannot be canceled beforee nor after ticketing. Only refundable in case of strikes or weather conditions strongly impacting the trafic",
+          },
+          specificity: [
+            { icon: "cancel", text: "Non refundable" },
+            { icon: "receipt", text: "Receipt printed by hotel" },
+            { icon: "notifications", text: "Late reception possible" },
+          ],
+          travelers: [
+            { firstName: "Pamela", lastName: "Olivia Gil" },
+            { firstName: "Michael", lastName: "Kael" },
+          ],
+        },
+      ],
+    });
+  </script>
+</body>
+
+</html>

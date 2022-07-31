@@ -1,0 +1,37 @@
+{
+  "name": "itinerary",
+  "displayName": "itinerary",
+  "version": "1.0.0",
+  "description": "Itinerary component",
+  "author": "LiBe",
+  "license": "ISC",
+  "repository": "https://github.com/libetl/itinerary",
+  "main": "dist/index.js",
+  "browser": "dist/index.js",
+  "engines": {
+    "node": ">=16",
+    "npm": ">=8"
+  },
+  "scripts": {
+    "build": "esbuild --bundle ./src --outfile=./dist/itinerary.js --external:react --target=safari11",
+    "send-storybook-to-surge": "npm run build-storybook -- -o itinerary-component/ && surge itinerary-component itinerary-component.surge.sh",
+    "test:watch": "react-scripts-ts test --env=jsdom",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "surge": "latest",
+    "esbuild": "latest",
+    "typescript": "latest"
+  },
+  "files": [
+    "dist"
+  ]
+}
